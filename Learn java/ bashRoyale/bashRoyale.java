@@ -23,6 +23,7 @@ public class bashRoyale{
     }
 
     public static void game() {
+        int charactereNumberChoose ;
         boolean gaming = true;
         while(gaming){
             Delay(2);
@@ -38,12 +39,27 @@ public class bashRoyale{
             // Simulation d’une boucle de jeu ou action
             System.out.println("\n========== [ SÉLECTION DU COMBATTANT ] ==========");
             chooseCaracter();
-
+            charactereNumberChoose =  Integer.parseInt(sc.nextLine());
+            switch (charactereNumberChoose) {
+                case 1:
+                    System.out.println("Guerrier Sélectionner");
+                    break;
+                case 2 :
+                    System.out.println("Mage Sélectionner");
+                break;
+                case 3 :
+                System.out.println("3 Rôdeur Sélectionner");
+                break;
+                default:
+                    throw new AssertionError();
+            }
             String input = sc.nextLine().trim().toLowerCase();
                 if (input.equals(5)) {
                         gaming = false;
                         Delay(1);
                 }
+
+                
         }
     }
         public static void chooseCaracter(){
